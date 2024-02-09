@@ -177,3 +177,4 @@ const MorganaDates = ['4/15', '5/2', '6/5', '6/20', '7/9', '7/25', '8/29', '9/17
 const SaeDates = ['7/9', '7/24', '8/22', '9/13', '10/12', '10/28', '11/20']
 const AkechiDates = ['6/10', '7/24', '8/28', '10/24', '10/26', '10/29', '11/19', '11/20', '12/18']
 
+//switch to only morning and night, when click next, go forward 12 hours starting from 4/9/2016 (+43200000 to timestamp), ends on 3/20
