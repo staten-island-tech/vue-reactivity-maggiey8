@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 const character = [     //based on Persona 5 (base)
     {
         characterName: 'Ryuji',
@@ -174,21 +173,21 @@ const characterAuto = [
     },
 ]
 
-const IgorDates = ['4/12', '4/18', '5/5', '6/5', '6/11', '8/21', '8/22', '8/31', '10/11', '12/24']
+/* const IgorDates = ['4/12', '4/18', '5/5', '6/5', '6/11', '8/21', '8/22', '8/31', '10/11', '12/24']
 const MorganaDates = ['4/15', '5/2', '6/5', '6/20', '7/9', '7/25', '8/29', '9/17', '10/11', '12/23']
 const SaeDates = ['7/9', '7/24', '8/22', '9/13', '10/12', '10/28', '11/20']
 const AkechiDates = ['6/10', '7/24', '8/28', '10/24', '10/26', '10/29', '11/19', '11/20', '12/18']
-
+ */
 const dowArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-function checkAuto(arr, date, pos) {
+/* function checkAuto(arr, date, pos) {
     for (let i=0; i<arr.length; i++) {
         if (arr[i] === date) {
             character.unshift(characterAuto[pos])
         }
     }
 }
-
+ */
 /* checkAuto(IgorDates, nextTime()[2], 0)
 checkAuto(MorganaDates, nextTime()[2], 1)
 checkAuto(SaeDates, nextTime()[2], 2)
@@ -220,9 +219,6 @@ function currentTime(arr) {
 </script>
 
 <template>
-  <div>
-    <button @click="nextTime">e</button>
-  </div>
 </template>
 
 <style scoped>
