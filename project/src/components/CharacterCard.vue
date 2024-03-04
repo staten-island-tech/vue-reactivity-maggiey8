@@ -1,5 +1,5 @@
 <template>
-    <button v-show='available' class="card" :class="Char.max ? 'max': 'maxFalse'">
+    <button v-if='Char.available' class="card" :class="Char.max ? 'max': 'maxFalse'">
         <h3 v-if="Char.max">Max Rank</h3>
         <h2>{{ Char.characterName }}</h2>
     </button>
@@ -9,7 +9,6 @@
     const props = defineProps({
         Char: Object
 })
-    const available = true
 </script>
 
 <style scoped>
@@ -26,5 +25,11 @@
 
 .max {
     background-color: rgb(57, 145, 196);
+}
+
+@media screen and (max-width: 813px) {
+  .card {
+    font-size: 0.5rem;
+  }
 }
 </style>

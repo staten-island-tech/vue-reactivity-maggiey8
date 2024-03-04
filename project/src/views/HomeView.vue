@@ -1,10 +1,13 @@
 <template>
-  <h2>{{ store.hour }}, {{ store.dow }}, {{ store.date }}</h2>
+  <h2>{{ store.hour }}, {{ store.days[store.dow] }}, {{ store.date }}</h2>
   <div>
     <CharacterCard :disabled="store.isChosen"
       v-for="items in store.chars" :Char=items @click="incRank(items)"></CharacterCard>
   </div>
-  <button v-if="store.isChosen" @click="NextDay">Next</button>
+  <div>
+    <button v-if="store.isChosen" @click="NextDay">Next</button>
+    <button v-if="!store.isChosen" @click="NextDay">Skip</button>
+  </div>
 </template>
 
 <script setup>
@@ -25,8 +28,18 @@ function incRank(items) {
   } 
 }
 
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+function checkAvailable() {
+  store.chars.forEach(char => {
+    if (char.time.includes(store.hour) && char.DOW.includes(store.dow)) {
+      char.available = true
+    }
+    else {
+      char.available = false
+    }
+})
+}
 
+checkAvailable()
 
 function NextDay() {
   const current = new Date(store.timestamp)
@@ -39,11 +52,11 @@ function NextDay() {
     else {
       store.hour = 'Evening'
     }
-    store.dow = days[current.getDay()]
+    store.dow = current.getDay()
     store.date = `${current.getMonth()+1}/${current.getDate()}`
 
     store.isChosen = false
-
+    checkAvailable()
     const checkIf =  [store.hour, current.getDay()]
     return checkIf
 }}
@@ -51,6 +64,10 @@ function NextDay() {
 </script>
 
 <style scoped>
+h2 {
+  margin-left: 30px
+}
+
 div {
   display: flex;
   flex-wrap: wrap;
@@ -63,4 +80,5 @@ button {
   height: 2rem;
   width: 5rem;
 }
+
 </style>

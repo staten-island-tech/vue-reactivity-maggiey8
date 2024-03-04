@@ -14,7 +14,7 @@
 <style scoped>
 div {
     background-color: rgb(212, 20, 20);
-    width: 27vw;
+    width: 24vw;
     margin: 30px;    
     padding: 10px;
 }

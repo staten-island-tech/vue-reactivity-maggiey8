@@ -13,10 +13,17 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
   div {
-    margin-left: 10px;
+    padding: 1rem;
   }
 
   a {
-    margin-right: 20px;
+    font-size: 1.2rem;
+    margin-right: 30px;
+    text-decoration: none;
+    color: rgb(198, 77, 77)
+  }
+
+  .router-link-exact-active {
+    text-decoration: underline;
   }
 </style>

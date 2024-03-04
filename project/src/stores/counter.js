@@ -15,191 +15,171 @@ export const useCharacterStore = defineStore('char', () => {
     const chars = [
         {
             characterName: 'Ryuji',
-            arcana: 'Chariot',
-            number: 'VII',
             time: ['Morning'],
             DOW: [1,2,3,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Ann',
-            arcana: 'Lovers',
-            number: 'VI',
             time: ['Morning'],
             DOW: [1,2,3,5,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Yusuke',
-            arcana: 'Emperor',
-            number: 'IV',
             time: ['Morning'],
             DOW: [1,2,3,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Makoto',
-            arcana: 'Priestess',
-            number: 'II',
             time: ['Morning'],
             DOW:  [2,4,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Futaba',
-            arcana: 'Hermit',
-            number: 'IX',
             time: ['Morning'],
             DOW: [3,4,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Haru',
-            arcana: 'Empress',
-            number: 'III',
             time: ['Morning'],
             DOW: [1,2,3,4,5,6],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Caroline & Justine',
-            arcana: 'Strength',
-            number: 'XI',
             time: ['Morning','Evening',],
             DOW: [1,2,3,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Mishima',
-            arcana: 'Moon',
-            number: 'XVIII',
             time: ['Evening'],
             DOW: [1,2,3,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Chihaya',
-            arcana: 'Fortune',
-            number: 'X',
             time: ['Evening'],
             DOW: [2,4,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Iwai',
-            arcana: 'Hanged Man',
-            number: 'XII',
             time: ['Evening'],
             DOW: [2,4,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Takemi',
-            arcana: 'Death',
-            number: 'XIII',
             time: ['Morning'],
             DOW: [1,2,3,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Kawakami',
-            arcana: 'Temperance',
-            number: 'XIV',
             time: ['Evening'],
             DOW: [5,6],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Ohya',
-            arcana: 'Devil',
-            number: 'XV',
             time: ['Evening'],
             DOW: [1,2,3,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Hifumi',
-            arcana: 'Star',
-            number: 'XVII',
             time: ['Evening'],
             DOW: [1,3,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Yoshida',
-            arcana: 'Sun',
-            number: 'XIX',
             time: ['Evening'],
             DOW: [7],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Sojiro',
-            arcana: 'Hierophant',
-            number: 'V',
             time: ['Evening'],
             DOW: [1,2,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Shinya',
-            arcana: 'Tower',
-            number: 'XVI',
             time: ['Morning'],
             DOW: [1,2,4,6],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Akechi',
-            arcana: 'Justice',
-            number: 'VIII',
-            time: ['Evening', 'Night'],
+            time: ['Evening'],
             DOW: [1,2,3,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Sumire',
-            arcana: 'Faith',
-            number: '',
-            time: ['Morning', 'Afternoon'],
+            time: ['Morning'],
             DOW: [1,2,3,4,5,6,0],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
         {
             characterName: 'Maruki',
-            arcana: 'Councillor',
-            number: '1',
-            time: ['Morning', 'Afternoon'],
+            time: ['Morning'],
             DOW: [1,2,3,5],
             rank: 0,
-            max: false
+            max: false,
+            available: true
         },
       ]
       
     const timestamp = ref(1460239200000)
     const hour = ref('Morning')
-    const dow = ref('Saturday')
+    const dow = ref(6)
     const date = ref('4/9')
     const isChosen = ref(false)
-
-    return {chars, timestamp, hour, dow, date, isChosen}
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    return {chars, timestamp, hour, dow, date, isChosen, days}
 })
