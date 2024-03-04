@@ -15,8 +15,22 @@
 div {
     background-color: rgb(212, 20, 20);
     width: 24vw;
-    margin: 30px;    
+    margin: 30px;
     padding: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1050px) {
+  div {
+      width: 15vw;
+      font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  div {
+      font-size: 0.5rem;
+  }
 }
 
 .max {

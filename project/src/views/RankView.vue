@@ -15,6 +15,6 @@ const store = useCharacterStore()
 .rank {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
 }  
 </style>
