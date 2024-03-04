@@ -177,4 +177,56 @@ const MorganaDates = ['4/15', '5/2', '6/5', '6/20', '7/9', '7/25', '8/29', '9/17
 const SaeDates = ['7/9', '7/24', '8/22', '9/13', '10/12', '10/28', '11/20']
 const AkechiDates = ['6/10', '7/24', '8/28', '10/24', '10/26', '10/29', '11/19', '11/20', '12/18']
 
-//switch to only morning and night, when click next, go forward 12 hours starting from 4/9/2016 (+43200000 to timestamp), ends on 3/20
+const dowArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+function checkAuto(arr, date, pos) {
+    for (let i=0; i<arr.length; i++) {
+        if (arr[i] === date) {
+            character.unshift(characterAuto[pos])
+        }
+    }
+}
+
+checkAuto(IgorDates, nextTime()[2], 0)
+checkAuto(MorganaDates, nextTime()[2], 1)
+checkAuto(SaeDates, nextTime()[2], 2)
+checkAuto(AkechiDates, nextTime()[2], 3)
+
+function nextTime() {               //346 days btwn 4/9 and 3/20 including 3/20 how do i get it to stop after a certain num of clicks tho
+    const timestamp = 1460196000    // starts April 9, 2016 @ 6:00 am
+    const current = new Date(timestamp)
+    let hour = current.getHours()
+    let dow = current.getDay()
+    let date = `${current.getMonth()+1}/${current.getDate()}`
+    timestamp = timestamp + 43200   // + 12 hours
+    return [hour, dow, date]
+}
+
+function currentTime(arr) {
+    if (arr[0] = 6) {
+        let time = 'Morning'
+        return time
+    }
+    else if (arr[0] = 12) {
+        let time = 'Evening'
+        return time
+    }
+
+    console.log(arr[2] + ' ' + dowArr[arr[1]-1] + ' ' + time)
+}
+
+document.querySelector('#toNext').addEventListener(click, currentTime(nextTime))
+
+// insert the cards like usual
+// user clicks on card
+// route to open new thingy, inserts card they clicked :D (and x button / esc brings them back to home)
+// have a "confirm" button, when clicked plays a rank up animation ...? maybe ????? and then star++++
+// next button at bottom of home to move forward 12 hours (morning -> evening -> next day)
+// next button only available once confirmed, automatically available on story locked days
+
+// chars in auto dont need to be confirmed, maybe make a separate div for them
+
+//  need a new array for weather days UUUUUUGHHHHHHHHH
+//  i think ill just get rid of the story locked days for now bc i reaaaallllyyy dont wanna do all that C:
+
+// ☆★ put into array for each character, 10 stars originally blank, for each click i++ which changes a star to full
